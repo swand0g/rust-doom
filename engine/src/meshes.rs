@@ -2,10 +2,10 @@ use super::entities::{Entities, Entity, EntityId};
 use super::errors::{ErrorKind, Result};
 use super::system::InfallibleSystem;
 use super::window::Window;
+use super::typed_buffer_any::TypedVertexBufferAny;
 pub use glium::index::IndexBuffer;
 use glium::index::{IndicesSource, PrimitiveType};
 use glium::vertex::{Vertex, VertexBuffer, VerticesSource};
-pub use glium_typed_buffer_any::TypedVertexBufferAny;
 use idcontain::IdMapVec;
 use log::{debug, error};
 

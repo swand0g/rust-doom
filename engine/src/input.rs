@@ -5,6 +5,7 @@ use crate::internal_derive::DependenciesFrom;
 use glium::glutin::event::{
     DeviceEvent, ElementState, Event, KeyboardInput, StartCause, VirtualKeyCode, WindowEvent,
 };
+use glium::glutin::window::CursorGrabMode;
 use math::Vec2f;
 use num_traits::Zero;
 use std::vec::Vec;
@@ -229,6 +230,8 @@ impl<'context> System<'context> for Input {
         "input"
     }
 
+    /// Note: cursor grabbing does not fully work on macOS!
+    /// Cursor is locked but you can still click outside of the window!
     fn update(&mut self, deps: Dependencies) -> Result<()> {
         if self.new_mouse_grabbed != self.mouse_grabbed {
             self.mouse_grabbed = self.new_mouse_grabbed;
@@ -236,7 +239,7 @@ impl<'context> System<'context> for Input {
                 .facade()
                 .gl_window()
                 .window()
-                .set_cursor_grab(self.mouse_grabbed)
+                .set_cursor_grab(if true { CursorGrabMode::Locked } else { CursorGrabMode::None })
                 .ok();
             deps.window
                 .facade()

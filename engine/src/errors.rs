@@ -171,6 +171,8 @@ impl ConvertGlium for glium::DrawError {
             | SubroutineUniformToValue { .. }
             | ClipPlaneIndexOutOfBounds { .. }
             | WrongQueryOperation => panic!("Invalid draw call: {:?}", self),
+
+            _ => panic!("Unhandled match case {:?}", self)
         }
     }
 }

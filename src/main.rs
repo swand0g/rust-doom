@@ -18,7 +18,7 @@ struct App {
     #[structopt(
         short = "i",
         long = "iwad",
-        default_value = "doom1.wad",
+        default_value = "assets/wad/doom1.wad",
         value_name = "FILE",
         parse(from_os_str)
     )]

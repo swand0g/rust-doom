@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/cristicbz/rust-doom.svg?branch=master)](https://travis-ci.org/cristicbz/rust-doom)
-
-Rust Doom
+Rust Doom 🦀
 =========
 
 A little Doom 1 & 2 Renderer written in [Rust](https://github.com/rust-lang/rust). Mostly written while I was learning the language starting around 6 years ago, so it might not the best example of Rust code! PR-s are welcome.
